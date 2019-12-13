@@ -22,7 +22,7 @@ class HowFeel extends Component {
         return(
             <div>
                 <h2>How Are You Feeling?</h2>
-                <input type="text" onChange={(event)=>this.handleChange(event, 'feeling')}/>
+                <input type="number" onChange={(event)=>this.handleChange(event, 'feeling')}/>
                 <button onClick={this.goToHowUnderstand}>Next</button>
             </div>
         )

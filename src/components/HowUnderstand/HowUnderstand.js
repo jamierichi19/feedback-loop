@@ -26,7 +26,7 @@ class HowUnderstand extends Component {
         return(
             <div>
                 <h2>How well are you understanding the content?</h2>
-                <input type="text" onChange={(event)=>this.handleChange(event, 'understand')} />
+                <input type="number" onChange={(event)=>this.handleChange(event, 'understand')} />
                 <button onClick={this.goToHowSupport}>Next</button>
             </div>
         )

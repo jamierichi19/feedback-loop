@@ -26,7 +26,7 @@ class HowSupport extends Component {
         return(
             <div>
                 <h2>How well are you being supported?</h2>
-                <input type="text" onChange={(event)=>this.handleChange(event, 'supported')} />
+                <input type="number" onChange={(event)=>this.handleChange(event, 'supported')} />
                 <button onClick={this.goToComments}>Next</button>
             </div>
         )
