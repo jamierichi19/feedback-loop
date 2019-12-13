@@ -15,11 +15,18 @@ const feelingReducer = (state=[], action)=>{
     }
     return state;
 }
+const understandReducer = (state=[], action)=>{
+    if(action.type === `UNDERSTAND`){
+        return action.payload;
+    }
+    return state;
+}
 
 
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
+        understandReducer
     }),
     applyMiddleware(logger)
 )

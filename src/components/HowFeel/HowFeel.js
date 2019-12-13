@@ -6,6 +6,7 @@ class HowFeel extends Component {
         feeling: ''
     }
     //takes user to next page
+    //saves how user is feeling in reducer
     goToHowUnderstand = ()=>{
         this.props.dispatch({ type: 'FEELING', payload: this.state });
         this.props.history.push(`/how-understand`);
@@ -16,7 +17,7 @@ class HowFeel extends Component {
         this.setState({
           [propertyName]: event.target.value
       })
-      }
+    }
     render(){
         return(
             <div>
