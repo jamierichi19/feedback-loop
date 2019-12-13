@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 
-class HowFeel extends Component { 
-    goToHowUnderstand = ()=>{
-        this.props.history.push(`/how-understand`);
-    }
+class HowUnderstand extends Component { 
     render(){
         return(
             <div>
-                <h2>How Are You Feeling?</h2>
+                <h2>How well are you understanding the content?</h2>
                 <input type="text"></input>
                 <button onClick={this.goToHowUnderstand}>Next</button>
             </div>
@@ -15,4 +12,4 @@ class HowFeel extends Component {
     }
 }
 
-export default HowFeel
+export default HowUnderstand;
