@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Review extends Component { 
     render(){
         return(
             <div>
                 <h2>Review Your Feedback!</h2>
-                <p>Feelings:</p>
-                <p>Understandings:</p>
-                <p>Support:</p>
-                <p>Comments:</p>
+                <p>Feelings: {this.props.Feelings}</p>
+                <p>Understandings: {this.props.Understandings}</p>
+                <p>Support: {this.props.Support}</p>
+                <p>Comments: {this.props.Comments}</p>
                 <button>Submit</button>
                 
             </div>
@@ -16,4 +17,11 @@ class Review extends Component {
     }
 }
 
-export default Review;
+const putReduxStateOnProps = (reduxState) => ({
+    Feelings: reduxState.feelingReducer.feeling,
+    Understandings: reduxState.understandReducer.understand,
+    Support: reduxState.supportedReducer.supported,
+    Comments: reduxState.commentReducer.comments
+})
+
+export default connect(putReduxStateOnProps)(Review);
