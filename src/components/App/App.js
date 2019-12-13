@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import HowFeel from '../HowFeel/HowFeel';
 import HowUnderstand from '../HowUnderstand/HowUnderstand';
 import HowSupport from '../HowSupport/HowSupport'
+import Comments from '../Comments/Comments'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route exact path='/' component={HowFeel} />
         <Route path='/how-understand' component={HowUnderstand} />
         <Route path='/how-support' component={HowSupport} />
+        <Route path='/comments' component={Comments} />
         </Router>
       </div>
     );
