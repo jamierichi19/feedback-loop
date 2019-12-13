@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 class Review extends Component { 
     render(){
+        console.log(this.props.reduxState)
         return(
             <div>
                 <h2>Review Your Feedback!</h2>
