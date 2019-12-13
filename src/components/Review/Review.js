@@ -10,6 +10,7 @@ class Review extends Component {
                 <p>Support:</p>
                 <p>Comments:</p>
                 <button>Submit</button>
+                
             </div>
         )
     }
