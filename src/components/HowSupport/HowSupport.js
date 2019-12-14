@@ -18,6 +18,11 @@ class HowSupport extends Component {
         }
     }
 
+    // Takes user to previous page
+    goBack = () =>{
+        this.props.history.push(`/how-understand`);
+    }
+
     // keeps track of information being typed in form
     handleChange = (event, propertyName) => {
         console.log('Got a change:', event.target.value, propertyName );
@@ -31,6 +36,7 @@ class HowSupport extends Component {
             <div>
                 <h2>How well are you being supported?</h2>
                 <input type="number" onChange={(event)=>this.handleChange(event, 'supported')} />
+                <button onClick={this.goBack}>Back</button>
                 <button onClick={this.goToComments}>Next</button>
             </div>
         )

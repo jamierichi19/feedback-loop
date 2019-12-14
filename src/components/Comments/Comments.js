@@ -14,6 +14,11 @@ class Comments extends Component {
         this.props.history.push(`/review`);
     }
 
+    // Takes user back to previous page
+    goBack = () => {
+        this.props.history.push(`/how-support`);
+    }
+
     // keeps track of information being typed in form
     handleChange = (event, propertyName) => {
         console.log('Got a change:', event.target.value, propertyName );
@@ -27,6 +32,7 @@ class Comments extends Component {
             <div>
                 <h2>Any comments you want to leave?</h2>
                 <input type="text" onChange={(event)=>this.handleChange(event, 'comments')}/>
+                <button onClick={this.goBack}>Back</button>
                 <button onClick={this.goToReview}>Next</button>
             </div>
         )

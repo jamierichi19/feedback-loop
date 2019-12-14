@@ -25,12 +25,12 @@ class HowFeel extends Component {
           [propertyName]: event.target.value
       })
     }
-    
+
     render(){
         return(
             <div>
                 <h2>How Are You Feeling?</h2>
-                <input type="number" onChange={(event)=>this.handleChange(event, 'feeling')}/>
+                <input type="number" onChange={(event)=>this.handleChange(event, 'feeling')} />
                 <button onClick={this.goToHowUnderstand}>Next</button>
             </div>
         )

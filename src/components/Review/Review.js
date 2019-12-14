@@ -16,14 +16,19 @@ class Review extends Component {
         axios.post('/feedback', newFeedback)
       .then(response => {
        console.log(response)
+       this.props.history.push(`/success`);
       })
       .catch( error => {
         console.log(`Error adding feedback`, error);
         alert(`Could not add feedback at this time. Please try again later.`);
       })
-        this.props.history.push(`/success`);
     }
-    
+
+    // Takes user to the previous page
+    goBack = () => {
+        this.props.history.push(`/comments`);
+    }
+
     render(){
         console.log(this.props.reduxState)
         return(
@@ -33,8 +38,8 @@ class Review extends Component {
                 <p>Understandings: {this.props.Understandings}</p>
                 <p>Support: {this.props.Support}</p>
                 <p>Comments: {this.props.Comments}</p>
+                <button onClick={this.goBack}>Back</button>
                 <button onClick={this.goToSuccess}>Submit</button>
-                
             </div>
         )
     }

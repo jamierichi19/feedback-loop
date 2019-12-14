@@ -7,7 +7,7 @@ class HowUnderstand extends Component {
     state ={
         understand: ''
     }
-    
+
     //takes user to next page
     //saves how user is understanding material in reducer
     goToHowSupport = ()=>{
@@ -17,6 +17,11 @@ class HowUnderstand extends Component {
             this.props.dispatch({ type: 'UNDERSTAND', payload: this.state });
             this.props.history.push(`/how-support`);
         } 
+    }
+    
+    // Takes user back to previous page
+    goBack = () => {
+        this.props.history.push(`/`);
     }
     
     // keeps track of information being typed in form
@@ -32,6 +37,7 @@ class HowUnderstand extends Component {
             <div>
                 <h2>How well are you understanding the content?</h2>
                 <input type="number" onChange={(event)=>this.handleChange(event, 'understand')} />
+                <button onClick={this.goBack}>Back</button>
                 <button onClick={this.goToHowSupport}>Next</button>
             </div>
         )
