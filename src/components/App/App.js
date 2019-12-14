@@ -16,12 +16,12 @@ class App extends Component {
         <Header />
         <br/>
         <Router>
-        <Route exact path='/' component={HowFeel} />
-        <Route path='/how-understand' component={HowUnderstand} />
-        <Route path='/how-support' component={HowSupport} />
-        <Route path='/comments' component={Comments} />
-        <Route path='/review' component={Review} />
-        <Route path='/success' component={Success} />
+          <Route exact path='/' component={HowFeel} />
+          <Route path='/how-understand' component={HowUnderstand} />
+          <Route path='/how-support' component={HowSupport} />
+          <Route path='/comments' component={Comments} />
+          <Route path='/review' component={Review} />
+          <Route path='/success' component={Success} />
         </Router>
       </div>
     );

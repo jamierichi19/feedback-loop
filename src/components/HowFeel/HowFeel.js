@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 class HowFeel extends Component { 
+
     state ={
         feeling: ''
     }
+
     //takes user to next page
     //saves how user is feeling in reducer
     goToHowUnderstand = ()=>{
@@ -15,6 +17,7 @@ class HowFeel extends Component {
             this.props.history.push(`/how-understand`);
         }
     }
+
     // keeps track of information being typed in form
     handleChange = (event, propertyName) => {
         console.log('Got a change:', event.target.value, propertyName );
@@ -22,6 +25,7 @@ class HowFeel extends Component {
           [propertyName]: event.target.value
       })
     }
+    
     render(){
         return(
             <div>

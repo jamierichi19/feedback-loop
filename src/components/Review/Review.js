@@ -23,6 +23,7 @@ class Review extends Component {
       })
         this.props.history.push(`/success`);
     }
+    
     render(){
         console.log(this.props.reduxState)
         return(

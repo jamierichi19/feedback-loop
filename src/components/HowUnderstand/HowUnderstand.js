@@ -7,6 +7,7 @@ class HowUnderstand extends Component {
     state ={
         understand: ''
     }
+    
     //takes user to next page
     //saves how user is understanding material in reducer
     goToHowSupport = ()=>{
