@@ -8,6 +8,7 @@ import HowUnderstand from '../HowUnderstand/HowUnderstand';
 import HowSupport from '../HowSupport/HowSupport';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Success from '../Success/Success'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         <Route path='/how-support' component={HowSupport} />
         <Route path='/comments' component={Comments} />
         <Route path='/review' component={Review} />
+        <Route path='/success' component={Success} />
         </Router>
       </div>
     );

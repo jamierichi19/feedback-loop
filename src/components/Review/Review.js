@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Review extends Component { 
+
+    //takes user to next page
+    goToSuccess = ()=>{
+        this.props.history.push(`/success`);
+    }
     render(){
         console.log(this.props.reduxState)
         return(
@@ -11,7 +16,7 @@ class Review extends Component {
                 <p>Understandings: {this.props.Understandings}</p>
                 <p>Support: {this.props.Support}</p>
                 <p>Comments: {this.props.Comments}</p>
-                <button>Submit</button>
+                <button onClick={this.goToSuccess}>Submit</button>
                 
             </div>
         )
