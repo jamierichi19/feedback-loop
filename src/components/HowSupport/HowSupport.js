@@ -10,8 +10,12 @@ class HowSupport extends Component {
     //takes user to next page
     //saves how user is supported in reducer
     goToComments = ()=>{
-        this.props.dispatch({ type: 'SUPPORTED', payload: this.state });
-        this.props.history.push(`/comments`);
+        if( this.state.supported === ''){
+            alert('Fill in form with a number')
+        } else {
+            this.props.dispatch({ type: 'SUPPORTED', payload: this.state });
+            this.props.history.push(`/comments`);
+        }
     }
 
     // keeps track of information being typed in form

@@ -8,8 +8,12 @@ class HowFeel extends Component {
     //takes user to next page
     //saves how user is feeling in reducer
     goToHowUnderstand = ()=>{
-        this.props.dispatch({ type: 'FEELING', payload: this.state });
-        this.props.history.push(`/how-understand`);
+        if( this.state.feeling === ''){
+            alert('Fill in form with a number')
+        } else{
+            this.props.dispatch({ type: 'FEELING', payload: this.state });
+            this.props.history.push(`/how-understand`);
+        }
     }
     // keeps track of information being typed in form
     handleChange = (event, propertyName) => {
