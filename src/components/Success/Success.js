@@ -1,4 +1,17 @@
 import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+
+const styles = theme => ({
+    card: {
+        minWidth: 275,
+      },
+    button: {
+        margin: theme.spacing.unit,
+    }
+  });
+
 
 class Success extends Component { 
 
@@ -9,15 +22,15 @@ class Success extends Component {
     
     render(){
         return(
-            <div>
+            <Card>
                 <h1>Success</h1>
                 <h2>Thank You For Completing Feedback!</h2>
-                <button onClick={this.goToHowFeel}>Leave New Feedback</button>
-            </div>
+                <Button variant="contained" color="primary" className={this.props.classes.button} onClick={this.goToHowFeel}>Leave New Feedback</Button>
+            </Card>
             
         )
     }
 }
 
 
-export default Success;
+export default withStyles(styles)(Success);
