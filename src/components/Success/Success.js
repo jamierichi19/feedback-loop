@@ -6,6 +6,7 @@ class Success extends Component {
     goToHowFeel = ()=>{
         this.props.history.push(`/`);
     }
+    
     render(){
         return(
             <div>
@@ -17,5 +18,6 @@ class Success extends Component {
         )
     }
 }
+
 
 export default Success;

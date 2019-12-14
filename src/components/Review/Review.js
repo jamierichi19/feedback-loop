@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Review extends Component { 
 
     //takes user to next page
+    //axios to post data to database
     goToSuccess = ()=>{
+        let newFeedback = {
+            feeling: this.props.Feelings,
+            understanding: this.props.Understandings,
+            support: this.props.Support,
+            comments: this.props.Comments
+        }
+        axios.post('/feedback', newFeedback)
+      .then(response => {
+       console.log(response)
+      })
+      .catch( error => {
+        console.log(`Error adding feedback`, error);
+        alert(`Could not add feedback at this time. Please try again later.`);
+      })
         this.props.history.push(`/success`);
     }
     render(){
