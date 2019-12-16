@@ -31,6 +31,22 @@ router.get('/', (req, res) => {
   });
 });
 
+// DELETE route to delete the specific row of feedback
+router.delete('/:id', (req, res) => {
+  let reqId = req.params.id;
+  console.log('Delete request for id', reqId);
+  let sqlText = 'DELETE FROM feedback WHERE id=$1;';
+  pool.query(sqlText, [reqId])
+      .then((result) => {
+          console.log('feedback deleted');
+          res.sendStatus(200);
+      })
+      .catch((error) => {
+          console.log(`Error making database query ${sqlText}`, error);
+          res.sendStatus(500); // Good server always responds
+      })
+})
+
   
 
 
