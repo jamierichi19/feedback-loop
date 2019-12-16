@@ -29,10 +29,10 @@ class Review extends Component {
     //axios to post data to database
     goToSuccess = () =>{
         let newFeedback = {
-            feeling: this.props.Feelings,
-            understanding: this.props.Understandings,
-            support: this.props.Support,
-            comments: this.props.Comments
+            feeling: this.props.feelings,
+            understanding: this.props.understandings,
+            support: this.props.support,
+            comments: this.props.comments
         }
         axios.post('/feedback', newFeedback)
       .then(response => {
@@ -57,10 +57,10 @@ class Review extends Component {
                 <CardContent>
                     <Typography className={this.props.classes.title} color="textSecondary" gutterBottom>
                         <h2>Review Your Feedback!</h2>
-                        <p>Feelings: {this.props.Feelings}</p>
-                        <p>Understandings: {this.props.Understandings}</p>
-                        <p>Support: {this.props.Support}</p>
-                        <p>Comments: {this.props.Comments}</p>
+                        <p>Feelings: {this.props.feelings}</p>
+                        <p>Understandings: {this.props.understandings}</p>
+                        <p>Support: {this.props.support}</p>
+                        <p>Comments: {this.props.comments}</p>
                         </Typography>
                 </CardContent>
                 <Button variant="contained" color="secondary" className={this.props.classes.button} onClick={this.goBack}>Back</Button>
@@ -71,10 +71,10 @@ class Review extends Component {
 }
 
 const putReduxStateOnProps = (reduxState) => ({
-    Feelings: reduxState.feelingReducer.feeling,
-    Understandings: reduxState.understandReducer.understand,
-    Support: reduxState.supportedReducer.supported,
-    Comments: reduxState.commentReducer.comments
+    feelings: reduxState.feelingReducer.feeling,
+    understandings: reduxState.understandReducer.understand,
+    support: reduxState.supportedReducer.supported,
+    comments: reduxState.commentReducer.comments
 })
 
 export default connect(putReduxStateOnProps)(withStyles(styles)(Review));
