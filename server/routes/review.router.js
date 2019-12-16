@@ -18,7 +18,20 @@ router.post('/', (req, res) => {
         console.log(`Error making database query ${sqlText}`, error);
         res.sendStatus(500); // Good server always responds
       })
-  })
+  });
+
+// GET route to select all feedback items 
+router.get('/', (req, res) => {
+  // Find all feedbacks and return them
+  pool.query('SELECT * FROM "feedback";').then((result) => {
+      res.send(result.rows);
+  }).catch((error) => {
+      console.log('Error GET /feedback', error);
+      res.sendStatus(500);  
+  });
+});
+
+  
 
 
 
