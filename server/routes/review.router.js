@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
 // GET route to select all feedback items 
 router.get('/', (req, res) => {
   // Find all feedbacks and return them
-  pool.query('SELECT * FROM "feedback";').then((result) => {
+  pool.query('SELECT * FROM "feedback" ORDER BY date DESC;').then((result) => {
       res.send(result.rows);
   }).catch((error) => {
       console.log('Error GET /feedback', error);
